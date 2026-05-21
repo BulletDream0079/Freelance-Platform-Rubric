@@ -14,6 +14,84 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/jobs/:id" element={<JobDetails />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/freelancers/:id" element={<FreelancerProfile />} />
+
+        <Route
+          path="/freelancer"
+          element={
+            <ProtectedRoute roles={["freelancer"]}>
+              <FreelancerDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/freelancer/profile"
+          element={
+            <ProtectedRoute roles={["freelancer"]}>
+              <FreelancerProfile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/client"
+          element={
+            <ProtectedRoute roles={["client"]}>
+              <ClientDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/client/post-job"
+          element={
+            <ProtectedRoute roles={["client"]}>
+              <PostJob />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/client/manage"
+          element={
+            <ProtectedRoute roles={["client"]}>
+              <ManageJobs />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/client/jobs/:id/proposals"
+          element={
+            <ProtectedRoute roles={["client"]}>
+              <ProposalReview />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute roles={["admin"]}>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/users"
+          element={
+            <ProtectedRoute roles={["admin"]}>
+              <UserManagement />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/listings"
+          element={
+            <ProtectedRoute roles={["admin"]}>
+              <ListingsManagement />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       {!hideFooter && <Footer />}
     </>
