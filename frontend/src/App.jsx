@@ -1,8 +1,21 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Jobs from "./pages/Jobs";
+import JobDetails from "./pages/JobDetails";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import FreelancerDashboard from "./pages/FreelancerDashboard";
+import FreelancerProfile from "./pages/FreelancerProfile";
+import ClientDashboard from "./pages/ClientDashboard";
+import PostJob from "./pages/PostJob";
+import ManageJobs from "./pages/ManageJobs";
+import ProposalReview from "./pages/ProposalReview";
+import AdminDashboard from "./pages/AdminDashboard";
+import UserManagement from "./pages/UserManagement";
+import ListingsManagement from "./pages/ListingsManagement";
 
-// Public
 import Home from "./pages/Home";
 export default function App() {
   const location = useLocation();
