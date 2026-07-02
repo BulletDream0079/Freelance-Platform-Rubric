@@ -2,6 +2,11 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Home from "./pages/Home";
+import Jobs from "./pages/Jobs";
+import JobDetails from "./pages/JobDetails";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 export default function App() {
   const location = useLocation();
