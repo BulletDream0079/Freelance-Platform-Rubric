@@ -1,17 +1,19 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "/api",
-});
+const baseURL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL.replace(/\/$/, "")}/api`
+  : "/api";
 
-// Inject token on every request
+const api = axios.create({ baseURL });
+
+// inject token on request
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
 
-// Global 401 handler
+// handler
 api.interceptors.response.use(
   (r) => r,
   (err) => {
