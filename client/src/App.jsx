@@ -7,6 +7,11 @@ import Jobs from "./pages/Jobs";
 import JobDetails from "./pages/JobDetails";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import FreelancerDashboard from "./pages/FreelancerDashboard";
+import FreelancerProfile from "./pages/FreelancerProfile";
+import ClientDashboard from "./pages/ClientDashboard";
+import PostJob from "./pages/PostJob";
+import ManageJobs from "./pages/ManageJobs";
 
 export default function App() {
   const location = useLocation();
