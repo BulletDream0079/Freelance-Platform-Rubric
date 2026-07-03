@@ -34,6 +34,14 @@ app.use("/api/auth", authLimiter);
 app.get("/api/health", (req, res) =>
   res.json({ ok: true, service: "freelance-platform", time: new Date().toISOString() })
 );
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/jobs", require("./routes/jobs"));
+app.use("/api/proposals", require("./routes/proposals"));
+app.use("/api/messages", require("./routes/messages"));
+app.use("/api/notifications", require("./routes/notifications"));
+app.use("/api/payments", require("./routes/payments"));
+app.use("/api/admin", require("./routes/admin"));
 app.use(notFound);
 app.use(errorHandler);
 
